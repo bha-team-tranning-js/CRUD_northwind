@@ -1,0 +1,533 @@
+{
+	"info": {
+		"_postman_id": "bb002f5c-f7af-4b9a-9b46-a0f6441c5bdc",
+		"name": "NorthWind",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Employees",
+			"item": [
+				{
+					"name": "Create Employee",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"company\":\"Nokia\", \r\n    \"last_name\":\"Nguyễn\", \r\n    \"first_name\":\"Hiệp\",\r\n    \"email_address\": \"hiepnguyen@gmail.com\",\r\n    \"job_title\":\"Nhân viên bán hàng\",\r\n    \"business_phone\": \"011231\",\r\n    \"home_phone\": null,\r\n    \"mobile_phone\": \"0131232\",\r\n    \"fax_number\": \"00020311\",\r\n    \"address\": \"Quảng Nam\",\r\n    \"city\": \"Quảng Nam\",\r\n    \"state_province\":\"012\",\r\n    \"zip_postal_code\":\"5555\",\r\n    \"country_region\": \"Việt Nam\",\r\n    \"web_page\": null,\r\n    \"notes\": null,\r\n    \"attachments\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/employees",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"employees"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Empoyees",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/employees",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"employees"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Employee",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"company\":\"Điện máy \", \r\n    \"last_name\":\"Nguyễn\", \r\n    \"first_name\":\"Hiệp\",\r\n    \"email_address\": \"hiepnguyen@gmail.com\",\r\n    \"job_title\":\"Nhân viên bán hàng\",\r\n    \"business_phone\": \"011231\",\r\n    \"home_phone\": null,\r\n    \"mobile_phone\": \"0131232\",\r\n    \"fax_number\": \"00020311\",\r\n    \"address\": \"Quảng Nam\",\r\n    \"city\": \"Quảng Nam\",\r\n    \"state_province\":\"012\",\r\n    \"zip_postal_code\":\"5555\",\r\n    \"country_region\": \"Việt Nam\",\r\n    \"web_page\": null,\r\n    \"notes\": null,\r\n    \"attachments\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/employees/25",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"employees",
+								"25"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Employee",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/employees/25",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"employees",
+								"25"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Employee",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/employees/26",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"employees",
+								"26"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Update Product",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"supplier_ids\" : \"6\",\r\n    \"product_code\": \"hahahahah-1\",\r\n    \"product_name\": \"Northwind Traders Chai\",\r\n    \"description\": null,\r\n    \"standard_cost\": 13.5,\r\n    \"list_price\":19,\r\n    \"reorder_level\":23,\r\n    \"target_level\":123,\r\n    \"quantity_per_unit\":\"10 boxes x 20 bags\",\r\n    \"discontinued\":10,\r\n    \"minimum_reorder_quantity\":100,\r\n    \"category\":\"Beverages\",\r\n    \"attachments\":\"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/products/102",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"102"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/products/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"supplier_ids\" : \"4\",\r\n    \"product_code\": \"NWTB-1\",\r\n    \"product_name\": \"Northwind Traders Chai\",\r\n    \"description\": null,\r\n    \"standard_cost\": 13.5,\r\n    \"list_price\":19,\r\n    \"reorder_level\":23,\r\n    \"target_level\":123,\r\n    \"quantity_per_unit\":\"10 boxes x 20 bags\",\r\n    \"discontinued\":10,\r\n    \"minimum_reorder_quantity\":100,\r\n    \"category\":\"Beverages\",\r\n    \"attachments\":\"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/products/103",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"103"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"products"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Suppliers",
+			"item": [
+				{
+					"name": "Get All Suppliers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/suppliers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"suppliers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Supplier",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/suppliers/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"suppliers",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Supplier",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"company\": \"Supplier Hiep\",\r\n        \"last_name\": \"Nguyen\",\r\n        \"first_name\": \"Hiep\",\r\n        \"email_address\": null,\r\n        \"job_title\": \"Sales Representative\",\r\n        \"business_phone\": null,\r\n        \"home_phone\": null,\r\n        \"mobile_phone\": null,\r\n        \"fax_number\": null,\r\n        \"address\": null,\r\n        \"city\": null,\r\n        \"state_province\": null,\r\n        \"zip_postal_code\": null,\r\n        \"country_region\": null,\r\n        \"web_page\": null,\r\n        \"notes\": null,\r\n        \"attachments\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/suppliers/11",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"suppliers",
+								"11"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Supplier",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"company\": \"Supplier Hiep\",\r\n        \"last_name\": \"Nguyen\",\r\n        \"first_name\": \"Hiep\",\r\n        \"email_address\": null,\r\n        \"job_title\": \"Sales Representative\",\r\n        \"business_phone\": null,\r\n        \"home_phone\": null,\r\n        \"mobile_phone\": null,\r\n        \"fax_number\": null,\r\n        \"address\": null,\r\n        \"city\": null,\r\n        \"state_province\": null,\r\n        \"zip_postal_code\": null,\r\n        \"country_region\": null,\r\n        \"web_page\": null,\r\n        \"notes\": null,\r\n        \"attachments\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/suppliers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"suppliers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Supplier",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/suppliers/12",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"suppliers",
+								"12"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Purchase_orders",
+			"item": [
+				{
+					"name": "Get All Purchase_orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/purchase_orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"purchase_orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Purchase_order",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/purchase_orders/90",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"purchase_orders",
+								"90"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Purchase_orders",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"supplier_id\": 1,\r\n    \"created_by\": 2,\r\n    \"submitted_date\": \"2006-01-22 00:00:00\",\r\n    \"creation_date\": \"2006-01-22 00:00:00\",\r\n    \"status_id\": 2,\r\n    \"expected_date\": \"2006-01-22 00:00:00\",\r\n    \"shipping_fee\": \"0.0000\",\r\n    \"taxes\": \"0.0000\",\r\n    \"payment_date\": \"2006-01-22 00:00:00\",\r\n    \"payment_amount\": \"0.0000\",\r\n    \"payment_method\": null,\r\n    \"notes\": null,\r\n    \"approved_by\": 2,\r\n    \"approved_date\":\"2006-01-22 00:00:00\",\r\n    \"submitted_by\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/purchase_orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"purchase_orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Purchase_orders",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/purchase_orders/149",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"purchase_orders",
+								"149"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Purchase_orders",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"supplier_id\": 1,\r\n    \"created_by\": 2,\r\n    \"submitted_date\": \"2008-01-22 00:00:00\",\r\n    \"creation_date\": \"2006-01-22 00:00:00\",\r\n    \"status_id\": 2,\r\n    \"expected_date\": \"2006-01-22 00:00:00\",\r\n    \"shipping_fee\": \"0.0000\",\r\n    \"taxes\": \"0.0000\",\r\n    \"payment_date\": \"2006-01-22 00:00:00\",\r\n    \"payment_amount\": \"0.0000\",\r\n    \"payment_method\": null,\r\n    \"notes\": null,\r\n    \"approved_by\": 2,\r\n    \"approved_date\":\"2006-01-22 00:00:00\",\r\n    \"submitted_by\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/purchase_orders/150",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"purchase_orders",
+								"150"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
