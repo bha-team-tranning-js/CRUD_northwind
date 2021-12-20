@@ -1,6 +1,6 @@
 1.Chạy lệnh "npm i" để cài package  
 2. Nhập npm start để chạy server. 
-3.import file NorthWind.postman_collection.json vào postman để sử dụng 
+3.import file util/NorthWind.postman_collection.json vào postman để sử dụng 
 
 
 
