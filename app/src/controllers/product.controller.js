@@ -6,10 +6,8 @@ const getAllProducts = async (req, res) => {
         res.status(200).json({
             success: true,
             message: 'get all Products suscess',
-            data: {
-                result: products.length,
-                products,
-            },
+            result: products.length,
+            data: products,
         });
     } catch (err) {
         res.status(500).json({
@@ -22,34 +20,20 @@ const getAllProducts = async (req, res) => {
 
 const createProduct = async (req, res) => {
     const {
-        supplier_ids,
-        product_code,
         product_name,
+        price,
+        image,
         description,
-        standard_cost,
-        list_price,
-        reorder_level,
-        target_level,
-        quantity_per_unit,
-        discontinued,
-        minimum_reorder_quantity,
-        category,
-        attachments,
+        category_id,
+        supplier_id,
     } = req.body;
     const product = new Product(
-        supplier_ids,
-        product_code,
         product_name,
+        price,
+        image,
         description,
-        standard_cost,
-        list_price,
-        reorder_level,
-        target_level,
-        quantity_per_unit,
-        discontinued,
-        minimum_reorder_quantity,
-        category,
-        attachments
+        category_id,
+        supplier_id
     );
     //chưa check dữ liệu đầu vào
     try {
@@ -66,7 +50,6 @@ const createProduct = async (req, res) => {
         });
     }
 };
-
 const getProduct = async (req, res) => {
     const { id } = req.params;
     try {
@@ -74,7 +57,7 @@ const getProduct = async (req, res) => {
         return res.status(201).json({
             success: true,
             message: 'find success!',
-            data: { product },
+            data: product,
         });
     } catch (err) {
         return res.status(500).json({
@@ -87,34 +70,20 @@ const getProduct = async (req, res) => {
 const updateProduct = async (req, res) => {
     const { id } = req.params;
     const {
-        supplier_ids,
-        product_code,
         product_name,
+        price,
+        image,
         description,
-        standard_cost,
-        list_price,
-        reorder_level,
-        target_level,
-        quantity_per_unit,
-        discontinued,
-        minimum_reorder_quantity,
-        category,
-        attachments,
+        category_id,
+        supplier_id,
     } = req.body;
     const product = new Product(
-        supplier_ids,
-        product_code,
         product_name,
+        price,
+        image,
         description,
-        standard_cost,
-        list_price,
-        reorder_level,
-        target_level,
-        quantity_per_unit,
-        discontinued,
-        minimum_reorder_quantity,
-        category,
-        attachments
+        category_id,
+        supplier_id
     );
     try {
         await product.updateById(id);

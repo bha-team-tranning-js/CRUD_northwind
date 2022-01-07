@@ -5,7 +5,7 @@ const getAllSuppliers = async (req, res) => {
         const suppliers = await Supplier.findAll();
         res.status(200).json({
             success: true,
-            message: 'get all Suppliers suscess',
+            message: 'get all suppliers suscess',
             data: {
                 result: suppliers.length,
                 suppliers,
@@ -21,43 +21,12 @@ const getAllSuppliers = async (req, res) => {
 };
 
 const createSupplier = async (req, res) => {
-    const {
-        company,
-        last_name,
-        first_name,
-        email_address,
-        job_title,
-        business_phone,
-        home_phone,
-        mobile_phone,
-        fax_number,
-        address,
-        city,
-        state_province,
-        zip_postal_code,
-        country_region,
-        web_page,
-        notes,
-        attachments,
-    } = req.body;
+    const { supplier_name, email_address, bussiness_phone, address } = req.body;
     const supplier = new Supplier(
-        company,
-        last_name,
-        first_name,
+        supplier_name,
         email_address,
-        job_title,
-        business_phone,
-        home_phone,
-        mobile_phone,
-        fax_number,
-        address,
-        city,
-        state_province,
-        zip_postal_code,
-        country_region,
-        web_page,
-        notes,
-        attachments
+        bussiness_phone,
+        address
     );
     //chưa check dữ liệu đầu vào
     try {
@@ -74,7 +43,6 @@ const createSupplier = async (req, res) => {
         });
     }
 };
-
 const getSupplier = async (req, res) => {
     const { id } = req.params;
     try {
@@ -94,43 +62,12 @@ const getSupplier = async (req, res) => {
 };
 const updateSupplier = async (req, res) => {
     const { id } = req.params;
-    const {
-        company,
-        last_name,
-        first_name,
-        email_address,
-        job_title,
-        business_phone,
-        home_phone,
-        mobile_phone,
-        fax_number,
-        address,
-        city,
-        state_province,
-        zip_postal_code,
-        country_region,
-        web_page,
-        notes,
-        attachments,
-    } = req.body;
+    const { supplier_name, email_address, bussiness_phone, address } = req.body;
     const supplier = new Supplier(
-        company,
-        last_name,
-        first_name,
+        supplier_name,
         email_address,
-        job_title,
-        business_phone,
-        home_phone,
-        mobile_phone,
-        fax_number,
-        address,
-        city,
-        state_province,
-        zip_postal_code,
-        country_region,
-        web_page,
-        notes,
-        attachments
+        bussiness_phone,
+        address
     );
     try {
         await supplier.updateById(id);

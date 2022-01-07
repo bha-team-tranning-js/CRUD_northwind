@@ -5,7 +5,7 @@ const getAllEmployees = async (req, res) => {
         const employees = await Employee.findAll();
         res.status(200).json({
             success: true,
-            message: 'get all employees suscess',
+            message: 'get all Employees suscess',
             data: {
                 result: employees.length,
                 employees,
@@ -14,7 +14,7 @@ const getAllEmployees = async (req, res) => {
     } catch (err) {
         res.status(500).json({
             success: false,
-            message: 'get all employees fail',
+            message: 'get all Employees fail',
             error: { err },
         });
     }
@@ -22,42 +22,22 @@ const getAllEmployees = async (req, res) => {
 
 const createEmployee = async (req, res) => {
     const {
-        company,
-        last_name,
-        first_name,
+        full_name,
         email_address,
-        job_title,
-        business_phone,
-        home_phone,
-        mobile_phone,
-        fax_number,
+        mobie_phone,
+        birth_day,
+        gender,
         address,
-        city,
-        state_province,
-        zip_postal_code,
-        country_region,
-        web_page,
-        notes,
-        attachments,
+        account_id,
     } = req.body;
     const employee = new Employee(
-        company,
-        last_name,
-        first_name,
+        full_name,
         email_address,
-        job_title,
-        business_phone,
-        home_phone,
-        mobile_phone,
-        fax_number,
+        mobie_phone,
+        birth_day,
+        gender,
         address,
-        city,
-        state_province,
-        zip_postal_code,
-        country_region,
-        web_page,
-        notes,
-        attachments
+        account_id
     );
     //chưa check dữ liệu đầu vào
     try {
@@ -74,7 +54,6 @@ const createEmployee = async (req, res) => {
         });
     }
 };
-
 const getEmployee = async (req, res) => {
     const { id } = req.params;
     try {
@@ -95,48 +74,28 @@ const getEmployee = async (req, res) => {
 const updateEmployee = async (req, res) => {
     const { id } = req.params;
     const {
-        company,
-        last_name,
-        first_name,
+        full_name,
         email_address,
-        job_title,
-        business_phone,
-        home_phone,
-        mobile_phone,
-        fax_number,
+        mobie_phone,
+        birth_day,
+        gender,
         address,
-        city,
-        state_province,
-        zip_postal_code,
-        country_region,
-        web_page,
-        notes,
-        attachments,
+        account_id,
     } = req.body;
     const employee = new Employee(
-        company,
-        last_name,
-        first_name,
+        full_name,
         email_address,
-        job_title,
-        business_phone,
-        home_phone,
-        mobile_phone,
-        fax_number,
+        mobie_phone,
+        birth_day,
+        gender,
         address,
-        city,
-        state_province,
-        zip_postal_code,
-        country_region,
-        web_page,
-        notes,
-        attachments
+        account_id
     );
     try {
         await employee.updateById(id);
         res.status(201).json({
             success: true,
-            message: 'Updated employee',
+            message: 'Updated Employee',
         });
     } catch (err) {
         res.status(500).json({

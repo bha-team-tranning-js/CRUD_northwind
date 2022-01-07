@@ -1,5 +1,5 @@
 const express = require('express');
-const router = express.Router();
+const res = require('express/lib/response');
 
 const {
     getAllSuppliers,
@@ -7,7 +7,9 @@ const {
     getSupplier,
     updateSupplier,
     deleteSupplier,
-} = require('../controllers/supplierController');
+} = require('../controllers/supplier.controller');
+
+const router = express.Router();
 
 router.route('/').get(getAllSuppliers).post(createSupplier);
 router
@@ -15,5 +17,4 @@ router
     .get(getSupplier)
     .put(updateSupplier)
     .delete(deleteSupplier);
-
 module.exports = router;

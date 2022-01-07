@@ -1,6 +1,6 @@
 const db = require('../config/db.config');
 
-const Employee = function (
+const Customer = function (
     full_name,
     email_address,
     mobie_phone,
@@ -19,28 +19,28 @@ const Employee = function (
 };
 
 //static func
-Employee.findAll = async function () {
-    const sql = 'SELECT * FROM Employees';
+Customer.findAll = async function () {
+    const sql = 'SELECT * FROM Customers';
     const [result, _] = await db.query(sql);
     if (!result.length) throw 'Không tìm thấy bản ghi nào !';
     return result;
 };
 
-Employee.findOne = async function (id) {
-    const sql = `SELECT * FROM Employees WHERE Employee_id=${id}`;
+Customer.findOne = async function (id) {
+    const sql = `SELECT * FROM Customers WHERE Customer_id=${id}`;
     const [result, _] = await db.query(sql);
     if (!result.length) throw `Không tìm thấy bản ghi với id ${id} !`;
     return result;
 };
-Employee.deleteById = async function (id) {
-    const sql = `DELETE FROM Employees WHERE Employee_id=${id}`;
+Customer.deleteById = async function (id) {
+    const sql = `DELETE FROM Customers WHERE Customer_id=${id}`;
     const [result, _] = await db.query(sql);
     if (result.affectedRows === 0) throw `Xóa bản ghi với id ${id} thất bại !`;
     return;
 };
-Employee.prototype.save = async function () {
+Customer.prototype.save = async function () {
     const sql = `
-    INSERT INTO Employees
+    INSERT INTO Customers
       (
         full_name,
         email_address,
@@ -65,10 +65,10 @@ Employee.prototype.save = async function () {
     return;
 };
 
-Employee.prototype.updateById = async function (id) {
+Customer.prototype.updateById = async function (id) {
     const sql = `
     UPDATE 
-      Employees
+      Customers
     SET 
         full_name="${this.full_name}",
         email_address="${this.email_address}",
@@ -78,11 +78,11 @@ Employee.prototype.updateById = async function (id) {
         address="${this.address}",
         account_id="${this.account_id}"
     WHERE 
-        Employee_id = ${id}
+        Customer_id = ${id}
   `;
     const [result, _] = await db.query(sql);
     if (result.affectedRows === 0) throw 'Cập nhật thất bại!';
     return;
 };
 
-module.exports = Employee;
+module.exports = Customer;
